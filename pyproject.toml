@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "sports-api"
+version = "0.1.0"
+description = ""
+authors = ["Aleksander <walkowski.aleksander@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sqlalchemy = "^2.0.21"
+psycopg2-binary = "^2.9.8"
+alembic = "^1.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
