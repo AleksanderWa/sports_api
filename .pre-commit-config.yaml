@@ -1,0 +1,35 @@
+# See https://pre-commit.com for more information
+# run hooks only in src/ dir
+files: '^src/'
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+        # Remove # -*- coding: utf-8 -*- from the top of python files
+      - id: fix-encoding-pragma
+        args:
+          - --remove
+      - id: double-quote-string-fixer
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        args:
+          - --config=src/pyproject.toml
+        types: [file, python]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.11.5
+    hooks:
+      - id: isort
+        name: isort
+        args:
+          - --settings=src/pyproject.toml
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        args:
+          - --config=src/setup.cfg
+        additional_dependencies:
+          - flake8-quotes

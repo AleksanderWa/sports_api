@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from enums import SportLeague
+from db.models.models import SportLeague
 
 
 class Birth(BaseModel):
